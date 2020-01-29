@@ -18,6 +18,7 @@ client.on('message', message => {
 			message.content.replace(prefix, "");
 			message.content.replace(" ", "");
 			prefix = message.content
+			message.channel.send("Your prefix is " + prefix)
 });
 
 client.login(auth.token);
