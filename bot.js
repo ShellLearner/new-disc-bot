@@ -12,10 +12,10 @@ client.on('message', message => {
 	if (message.author.bot)
 		return;
 	else if (message.content.startsWith(prefix))
-		if (message.content.startsWith(prefix + 'ping')) { 
+		message.content.replace(prefix, "")
+		if (message.content.startsWith('ping')) { 
 			message.channel.send("Pong! Hello!");
-		} else if (message.content.startsWith(prefix + "prefix")
-			message.content.replace(prefix, "");
+		} else if (message.content.startsWith("prefix")
 			message.content.replace(" ", "");
 			prefix = message.content
 			message.channel.send("Your prefix is " + prefix)
