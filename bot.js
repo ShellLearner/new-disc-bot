@@ -9,16 +9,17 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.author.bot)
+	if (message.author.bot) {
 		return;
-	else if (message.content.startsWith(prefix))
+	} else if (message.content.startsWith(prefix)) {
 		message.content.replace(prefix, "")
 		if (message.content.startsWith('ping')) { 
 			message.channel.send("Pong! Hello!");
 		} else if (message.content.startsWith("prefix")
 			message.content.replace(" ", "");
 			prefix = message.content
-			message.channel.send("Your prefix is " + prefix)
+			message.channel.send("Your prefix is " + prefix) 
+	}
 });
 
 client.login(auth.token);
