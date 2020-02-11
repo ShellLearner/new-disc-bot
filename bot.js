@@ -23,10 +23,22 @@ client.on('message', message => {
 		} else if (command.startsWith("comment")) {
 			var comment = command.replace("comment ", "")
 				
-			fs.writeFile(comments.txt, comment, err => {
+			fs.appendFile("comments.txt","\n" + comment, err => {
 				if (err) {throw err}
 			});
-			
+			console.log("Comment logged");
+			message.channel.send("Comment logged. Thank you for your feedback!");
+
+		} else if (command.startsWith("help")) { 
+			console.log("help page called");
+			message.channel.send(`This is still a work in progress.
+				Please be patient while I work out the bugs!
+
+				ping: tests if the bot is online
+				comment: sends a comment to the devs
+				help: opens this help page
+				`)
+
 		}
 	}
 });
