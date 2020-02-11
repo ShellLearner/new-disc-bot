@@ -25,7 +25,7 @@ client.on('message', message => {
 				
 			fs.writeFile(comments.txt, comment, err => {
 				if (err) {throw err}
-			}
+			});
 			
 		}
 	}
