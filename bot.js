@@ -32,11 +32,11 @@ client.on('message', message => {
 		} else if (command.startsWith("help")) { 
 			console.log("help page called");
 			message.channel.send(`This is still a work in progress.
-				Please be patient while I work out the bugs!
+			Please be patient while I work out the bugs!
 
-				ping: tests if the bot is online
-				comment: sends a comment to the devs
-				help: opens this help page
+			ping: tests if the bot is online
+			comment: sends a comment to the devs
+			help: opens this help page
 				`)
 
 		}
