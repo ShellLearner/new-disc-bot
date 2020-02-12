@@ -14,7 +14,6 @@ client.on('message', message => {
 		return;
 
 	} else if (message.content.startsWith(prefix)) {
-		console.log("A command");
 		var command = message.content.replace(prefix, "")
 
 		if (command.startsWith("ping")) {
@@ -38,8 +37,11 @@ comment: sends a comment to the devs
 help: opens this help page
 				`)
 
+		} else if (command.startsWith("say")) {
+			var botmsg = command.replace("say ", "");
+			message.channel.send(botmsg);
 		}
-	}
+	} 
 });
 
 
