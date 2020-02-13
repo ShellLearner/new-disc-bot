@@ -19,7 +19,7 @@ client.on('message', message => {
 		if (command.startsWith("ping")) {
 			message.channel.send("Pong!");
 			console.log("Ping recieved");
-		} else if (command.startsWith("comment")) {
+		} else if (command.startsWith("comment ")) {
 			var comment = command.replace("comment ", "")
 				
 			fs.appendFile("comments.txt","\n" + comment, err => {
@@ -37,9 +37,14 @@ comment: sends a comment to the devs
 help: opens this help page
 				`)
 
-		} else if (command.startsWith("say")) {
+		} else if (command.startsWith("say ")) {
 			var botmsg = command.replace("say ", "");
 			message.channel.send(botmsg);
+		} else if (command.startsWith("store ")) {
+			var usrmsg = command.replace("store ", "");
+			fs.writeFile("usr-msg/" + message.author.id, "\n" + usrmsg , err => {
+				if (err) {throw err}
+			});
 		}
 	} 
 });
