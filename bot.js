@@ -42,7 +42,7 @@ help: opens this help page
 			message.channel.send(botmsg);
 		} else if (command.startsWith("store ")) {
 			var usrmsg = command.replace("store ", "");
-			fs.writeFile("usr-msg/" + message.author.id, "\n" + usrmsg , err => {
+			fs.writeFile("usr-data/" + message.author.id, "\n" + usrmsg , err => {
 				if (err) {throw err}
 			});
 		}
