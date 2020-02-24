@@ -35,6 +35,8 @@ Please be patient while I work out the bugs!\n
 ping: tests if the bot is online
 comment: sends a comment to the devs
 help: opens this help page
+store: stores data (will be removed later, is just a proof-of-concept)
+read: reads data stored using the \`store\` command
 				`)
 
 		} else if (command.startsWith("say ")) {
@@ -42,7 +44,7 @@ help: opens this help page
 			message.channel.send(botmsg);
 		} else if (command.startsWith("store ")) {
 			var usrmsg = command.replace("store ", "");
-			fs.writeFile("usr-msg/" + message.author.id, "\n" + usrmsg , err => {
+			fs.appendFile("usr-msg/" + message.author.id, "\n" + usrmsg , err => {
 				if (err) {throw err}
 			});
 		}
