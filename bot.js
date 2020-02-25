@@ -47,6 +47,15 @@ read: reads data stored using the \`store\` command
 			fs.appendFile("usr-msg/" + message.author.id, "\n" + usrmsg , err => {
 				if (err) {throw err}
 			});
+		} else if (command.startsWith("read")) { 
+			fs.readFile("usr-msg/" + message.author.id, "utf-8", (err, data) => {
+				if (err) {
+					message.channel.send("There is an error.");
+					console.log(err);
+				} else {
+					message.channel.send(data)
+				}
+			});
 		}
 	} 
 });
