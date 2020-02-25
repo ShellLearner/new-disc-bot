@@ -2,6 +2,6 @@
 usr-msg/**
 
 #ignores comments
-./comments.txt
+/comments.txt
 
 
