@@ -1,1 +1,7 @@
+#ignores user messages
 usr-msg/**
+
+#ignores comments
+./comments.txt
+
+
