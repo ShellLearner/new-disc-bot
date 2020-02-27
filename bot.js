@@ -50,7 +50,7 @@ read: reads data stored using the \`store\` command
 		} else if (command.startsWith("read")) { 
 			fs.readFile("usr-msg/" + message.author.id, "utf-8", (err, data) => {
 				if (err) {
-					message.channel.send("There is an error.");
+					message.channel.send("There is an error. Do you have anything stored here?");
 					console.log(err);
 				} else {
 					message.channel.send(data)
