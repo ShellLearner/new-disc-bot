@@ -1,0 +1,9 @@
+#ignores user messages
+usr-msg/**
+#except for a README explaining why this folder is empty
+!usr-msg/README.md
+
+#ignores comments
+/comments.txt
+
+
