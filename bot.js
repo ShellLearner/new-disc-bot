@@ -1,22 +1,31 @@
+//dependencies or something
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const auth = require('../auth.json');
 const fs = require("fs");
 var prefix = "??"
 
+//aliases located here
+var ping = ("ping")
+var profile = ("profile", "p")
+
+
+//check if or when the bot is ready
 client.on('ready', () => {
 	console.log(`AYOOO ok logged in as ${client.user.tag}`)
 });
 
 client.on('message', message => {
-
+	
+	//if author is a bot: ignore 
+	//crucial for messages to not call themselves
 	if (message.author.bot){
 		return;
 
 	} else if (message.content.startsWith(prefix)) {
 		var command = message.content.replace(prefix, "")
 
-		if (command.startsWith("ping")) {
+		if (command.startsWith(ping)) {
 			message.channel.send("Pong!");
 			console.log("Ping recieved");
 		} else if (command.startsWith("comment ")) {
